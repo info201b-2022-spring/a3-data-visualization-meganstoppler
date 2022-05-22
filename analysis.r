@@ -85,24 +85,6 @@ aapi_prop_2015 <- mean(race_proportion2015_df[["aapi_proportion"]], na.rm = TRUE
 
 
 # Trends over time chart
-# race <- c("white_overtime", "black_overtime", "latinx_overtime", "native_overtime", "aapi_overtime")
-# prop_1985 <- c(white_prop_1985, black_prop_1985, latinx_prop_1985, native_prop_1985, aapi_prop_1985)
-# prop_1990 <- c(white_prop_1990, black_prop_1990, latinx_prop_1990, native_prop_1990, aapi_prop_1990)
-# prop_2000 <- c(white_prop_2000, black_prop_2000, latinx_prop_2000, native_prop_2000, aapi_prop_2000)
-# prop_2008 <- c(white_prop_2008, black_prop_2008, latinx_prop_2008, native_prop_2008, aapi_prop_2008)
-# prop_2015 <- c(white_prop_2015, black_prop_2015, latinx_prop_2015, native_prop_2015, aapi_prop_2015)
-# 
-# overtime_df <- data.frame(race, prop_1985, prop_1990, prop_2000, prop_2008, prop_2015)
-# over_time_df <- overtime_df %>%
-#   gather(key = "Year", value = "Proportion", prop_1985, prop_1990, prop_2000, prop_2008, prop_2015)
-# 
-# color_order <- c("lightgoldenrod", "palegreen", "skyblue", "steelblue", "lightslategray")
-# ggplot(data = over_time_df, aes(x = Year, y = Proportion, fill = race)) +
-#   geom_bar(position = "stack", stat = "identity") + 
-#   ggtitle("Proportion of each race in prison for each year") +
-#   scale_fill_manual(name = "Race", labels = c("aapi", "black", "latinx", "native", "white"), values = color_order) +
-#   scale_x_discrete(name = "Year", labels = c("1985", "1990", "2000", "2008", "2015"))
-
 race_prison_df <- incarcerations %>% 
   group_by(year) %>%
   filter(year > 1977 & year < 2016) %>%
