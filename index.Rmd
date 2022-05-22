@@ -1,0 +1,21 @@
+---
+title: "index.Rmd"
+output: html_document
+date: '2022-05-10'
+---
+
+## Introduction
+- Highest prison admissions for county for each state in 2015
+- total jailed population in each state
+- proportion of juvenile jail for 1990, 2000, 2015
+- total prison population for each racial group
+- proportion of each race in prison in 1985, 2000, 2015
+
+## Trends Over Time Chart
+My chart shows the proportion of each race in prison for each year. Proportion was on the y axis and the year was on the x axis. The white population consistently make up the majority of the prison population. Since 2000, the proportion of the Black population seems to be slowly decreasing. The Latinx population seems to be fairly consistent for around 10 years at a time, but then the proportion changes then stays consistent at that value for another 10 years. The Native population makes up a small proportion of prison and is on a very slow increase. Finally, the AAPI population makes up the smallest proportion and may be slightly increasing, however the change is very minimal and difficult to visualize on the graph at this scale.
+
+## Variable Comparison Chart
+My chart shows the total population in jail versus the population of males in juvenile jail. Total jail population was on the x axis and the population of males in juvenile jail was on the y axis. I wanted to see if there was a connection between the total jail population and males in juvenile jail since we often think that the majority of the people in jail are male. This chart showed that there did seem to be more males in juvenile jail when there is a greater total jail population, however the relationship is not very precise as the line of best fit would not contain many of our data points.
+
+## Map
+My map is showing the prison population for each county. Each bubble represents a county and the size of the bubble represents the population of the prison. It seems that the largest prisons are in California, New York, and Texas. This makes sense since these areas are very heavily populated. In central US, the prison populations are fairly small which would make sense since those states have smaller populations. We do seem to be missing a significant amount of data as there are no values for prisons around Montana and Wyoming.
