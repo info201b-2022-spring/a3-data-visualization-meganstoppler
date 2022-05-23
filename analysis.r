@@ -133,11 +133,11 @@ prison_df <- incarcerations %>%
 
 US <- map_data("world") %>% filter(region == "US")
 
-dfips <- maps::county.fips %>%
-  as.tibble %>% 
+fips_codes <- maps::county.fips %>%
+  as.tibble() %>% 
   extract(polyname, c("region", "subregion"), "^([^,]+),([^,]+)$")
 long_lat_values <- map_data("county") %>% 
-  left_join(dfips)
+  left_join(fips_codes)
 
 long_lat_values <- long_lat_values %>% distinct(fips, .keep_all = TRUE)
 
