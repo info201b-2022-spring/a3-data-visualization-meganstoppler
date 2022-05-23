@@ -131,7 +131,7 @@ prison_df <- incarcerations %>%
   filter(year == 2000) %>%
   select(fips, total_prison_pop)
 
-US <- map_data("world") %>% filter(region == "US")
+US <- map_data("county")
 
 fips_codes <- maps::county.fips %>%
   as.tibble() %>% 
@@ -144,13 +144,22 @@ long_lat_values <- long_lat_values %>% distinct(fips, .keep_all = TRUE)
 prison_map_df <- merge(prison_df, long_lat_values, by = "fips")
 
 ggplot() +
-  geom_polygon(data = US, aes(x=long, y = lat, group = group), 
-               fill="grey", alpha=0.3) +
+  geom_polygon(data = US, aes(x=long, y = lat, group = group),
+              color = "gray45", size = 0.1, fill = "gray90") +
   geom_point(data=prison_map_df, aes(x=long, y=lat, size=total_prison_pop),
              color = "steelblue", alpha = 0.8) +
   scale_size_continuous(range=c(0.1,3), name = "Prison Population") +
   ggtitle("Prison Population of Each County") +
-  labs(x = "Longitude", y = "Latitude")
-
+  labs(x = "Longitude", y = "Latitude") + 
+  theme(
+    axis.line = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank(),
+        plot.background = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank()
+  )
 
 
